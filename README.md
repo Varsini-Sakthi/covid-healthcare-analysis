@@ -17,8 +17,8 @@ resource optimization), and a Tableau dashboard build guide.
 **Why synthetic data?** Real patient-level COVID data is protected health information (PHI) under
 HIPAA and isn't publicly redistributable at the individual level. This project generates data with
 realistic epidemic dynamics (multi-wave case curves, testing lag, hospitalization lag, ICU
-progression rates, capacity constraints) so every downstream technique — the SQL, the stats, the
-dashboards — is something you can describe and defend in an interview using your own numbers.
+progression rates, capacity constraints) so every downstream technique, the SQL, the stats, the
+dashboards, is something you can describe and defend in an interview using your own numbers.
 
 ---
 
@@ -75,7 +75,7 @@ python python/resource_optimization.py
 #    "Other Databases (ODBC)" / SQLite connector).
 ```
 
-No PostgreSQL/MySQL server required — everything runs against a local SQLite file, which Tableau
+No PostgreSQL/MySQL server required, everything runs against a local SQLite file, which Tableau
 Desktop (Mac) connects to natively via its "SQLite" or generic ODBC connector. If you'd rather use
 Postgres (closer to a real hospital data warehouse), `sql/01_schema.sql` is written in
 portable ANSI SQL and will run with only trivial syntax tweaks (`AUTOINCREMENT` → `SERIAL`).
@@ -88,11 +88,11 @@ portable ANSI SQL and will run with only trivial syntax tweaks (`AUTOINCREMENT` 
 | `sql/02_analysis_queries.sql` | Window functions, rolling averages, positivity-rate calc, doubling time, ICU strain index, cohort/regional comparisons |
 | `generate_synthetic_data.py` | Epidemic curve simulation (multi-wave Gaussian mixture), realistic test→hospitalization→ICU lag structure |
 | `statistical_analysis.py` | STL time-series decomposition, SARIMA forecasting w/ confidence intervals, CUSUM changepoint detection for wave onset, Poisson regression for hospitalization demand |
-| `resource_optimization.py` | Linear programming (PuLP) to optimally allocate a constrained ICU-bed/ventilator pool across facilities under demand forecasts — this is the "optimized resource allocation" claim, made rigorous and defensible |
+| `resource_optimization.py` | Linear programming (PuLP) to optimally allocate a constrained ICU-bed/ventilator pool across facilities under demand forecasts, this is the "optimized resource allocation" claim, made rigorous and defensible |
 | Tableau dashboards | Real-time-style KPI dashboard: positivity rate trend, hospitalization funnel, regional heatmap, resource strain gauge |
 
 ## 4. Using this for your resume / interview
 
 `docs/METHODOLOGY.md` contains a written methodology section (assumptions, model choices,
-limitations) in the style expected for a portfolio piece or take-home case study — use it to
+limitations) in the style expected for a portfolio piece or take-home case study, use it to
 answer "walk me through your project" questions with specifics instead of generalities.
