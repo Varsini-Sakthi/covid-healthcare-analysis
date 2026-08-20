@@ -1,0 +1,5 @@
+facility_id,facility_name,current_icu_capacity,projected_7d_demand,recommended_bed_transfer,new_effective_capacity,residual_shortfall
+1,Northside General Hospital,48,52,0,48,4.0
+3,Eastview Regional Medical Center,30,24,0,30,0.0
+5,Southport University Hospital,55,44,-1,54,0.0
+7,Westfield Memorial Hospital,20,22,1,21,1.0
