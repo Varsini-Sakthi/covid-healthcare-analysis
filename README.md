@@ -1,24 +1,17 @@
 # COVID-19 Healthcare Impact Analysis
 ### RT-PCR Testing Trends, Hospitalization Dynamics & Resource Allocation Optimization
 
-A graduate-level (PhD-caliber) healthcare data analytics project demonstrating the full pipeline
+A healthcare data analytics project demonstrating the full pipeline
 referenced in the resume bullet:
 
 > *"Conducted comprehensive trend analysis on RT-PCR test results and hospitalization patterns
 > using SQL and Tableau, building real-time dashboards that optimized resource allocation during
 > pandemic response."*
 
-This repo gives you everything needed to reproduce that project end-to-end on your own machine:
-a relational database (SQLite, zero-config), a synthetic-but-epidemiologically-realistic dataset
-generator, an analytical SQL layer, a statistical/forecasting layer in Python (time series
-decomposition, SARIMA forecasting, changepoint detection, Poisson regression, linear-programming
-resource optimization), and a Tableau dashboard build guide.
-
 **Why synthetic data?** Real patient-level COVID data is protected health information (PHI) under
 HIPAA and isn't publicly redistributable at the individual level. This project generates data with
 realistic epidemic dynamics (multi-wave case curves, testing lag, hospitalization lag, ICU
-progression rates, capacity constraints) so every downstream technique, the SQL, the stats, the
-dashboards, is something you can describe and defend in an interview using your own numbers.
+progression rates, capacity constraints).
 
 ---
 
@@ -91,8 +84,8 @@ portable ANSI SQL and will run with only trivial syntax tweaks (`AUTOINCREMENT` 
 | `resource_optimization.py` | Linear programming (PuLP) to optimally allocate a constrained ICU-bed/ventilator pool across facilities under demand forecasts, this is the "optimized resource allocation" claim, made rigorous and defensible |
 | Tableau dashboards | Real-time-style KPI dashboard: positivity rate trend, hospitalization funnel, regional heatmap, resource strain gauge |
 
-## 4. Using this for your resume / interview
+## 4. Author
 
-`docs/METHODOLOGY.md` contains a written methodology section (assumptions, model choices,
-limitations) in the style expected for a portfolio piece or take-home case study, use it to
-answer "walk me through your project" questions with specifics instead of generalities.
+Varsini Sakthivadivel Ramasamy 
+Ms Bioinformatics 
+Johns Hopkins University
